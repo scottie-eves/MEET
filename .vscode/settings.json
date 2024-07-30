@@ -4,6 +4,7 @@
         "noopener",
         "noreferrer",
         "precaching",
-        "predeploy"
+        "predeploy",
+        "scotteverson"
     ]
 }
