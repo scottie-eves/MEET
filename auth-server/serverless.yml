@@ -23,5 +23,5 @@ functions:
     handler: handler.getAccessToken
     events:
       - http:
-          path: api/token/{code}
+          path: api/token
           method: get
