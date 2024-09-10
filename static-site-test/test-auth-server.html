@@ -39,6 +39,7 @@
         fetch(getAuthURL)
           .then(function (response) {
             return response.json();
+            console.log(message + "ITS GETTING HERE");
           })
           .then(function (json) {
             const result = JSON.stringify(json);
