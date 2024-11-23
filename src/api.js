@@ -45,7 +45,7 @@ export const getEvents = async () => {
   
     if (token) {
       removeQuery();
-      const url =  "https://cshdf6qjqv2ygdl3glye23aoxa0czfyb.lambda-url.us-west-2.on.aws/" + "/" + token;
+      const url =  "https://pxdyls9agj.execute-api.us-west-2.amazonaws.com/getEvents" + "/" + token;
       const response = await fetch(url);
       const result = await response.json();
       if (result) {
@@ -57,7 +57,7 @@ export const getEvents = async () => {
   const getToken = async (code) => {
     const encodeCode = encodeURIComponent(code);
     const response = await fetch(
-        'https://sljlhiedzzvng3ry7vxdv7mcnu0jbasw.lambda-url.us-west-2.on.aws/' + '/' + encodeCode
+        'https://pxdyls9agj.execute-api.us-west-2.amazonaws.com/getToken' + '/' + encodeCode
     );
     const { access_token } = await response.json();
     access_token && localStorage.setItem("access_token", access_token);
@@ -76,7 +76,7 @@ export const getAccessToken = async () => {
         const code = await searchParams.get("code");
         if (!code) {
         const response = await fetch(
-            "https://vpvvxozjhwjmk6ewvchzzsdpmm0ibtto.lambda-url.us-west-2.on.aws/"
+            "https://pxdyls9agj.execute-api.us-west-2.amazonaws.com/getAuth"
         );
         const result = await response.json();
         const { authUrl } = result;
